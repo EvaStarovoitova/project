@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Course
+from .models.courses import Course
 from .forms import CourseForm
 
 

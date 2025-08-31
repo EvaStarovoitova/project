@@ -1,5 +1,5 @@
 from django import forms#хранение форм
-from courses.models import Course 
+from .models.courses import Course 
 
 class CourseForm(forms.ModelForm):
     class Meta:
