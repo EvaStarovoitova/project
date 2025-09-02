@@ -1,0 +1,13 @@
+{% extends "courses/layout.html" %}
+{% load bootstrap5 %}
+
+{% block title %} Создание курсов {% endblock %}
+{% block body %}
+        <h1>Создать курс</h1>
+<form method="post" class="w-50 mt-3 mb-2 mx-auto" >
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+<a href="{% url 'courses_list' %}">Назад к списку</a>
+{% endblock %}

@@ -1,7 +1,11 @@
 from django.urls import path 
-from .views import courses_list
+from .views import CoursesCreateView, CoursesListView
 
 
 urlpatterns=[
-    path('', courses_list),
+  
+    path('', CoursesListView.as_view(), name='home'),  # корневой URL
+    path('create/', CoursesCreateView.as_view(), name="courses_create"),
+    path('courses/', CoursesListView.as_view(), name="courses_list"),
+
 ]

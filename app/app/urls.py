@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-     path('courses/', include('courses.urls')),# когда в запросе первое слово books сразу же пойдем в books.urls
+    path('courses/', include('courses.urls')),# когда в запросе первое слово books сразу же пойдем в books.urls
     path('admin/', admin.site.urls),
 ]

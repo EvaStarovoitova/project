@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курсы</title>
-</head>
-    <body>
-        <h1>Список курсов</h1>
 
+{% extends "courses/layout.html" %}
+{% block title %} Курсы {% endblock %}
+{% block body %}
+        <h1>Все курсы</h1>
+    <ul>
+    {% for course in courses %}
+        <li>{{ course.title }} - {{ course.what_you_will_learn }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'courses_create' %}">Создать новый курс</a>
 
-       <ul>
-            {% for course in courses %}
-            <li>{{course.title}} {{course.price}} {{course.short_description}}</li>
-            {% endfor %}
-
-       </ul>
-        
-       {{ form }}
-    </body>
-</html>
+    {% include 'courses/test.html' with name="Eva" %} <!-- шаблон для карточек -->
+{% endblock %}
