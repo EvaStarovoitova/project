@@ -1,13 +1,32 @@
 {% extends "courses/layout.html" %}
 {% load bootstrap5 %}
 
-{% block title %} Создание курсов {% endblock %}
-{% block body %}
-        <h1>Создать курс</h1>
-<form method="post" class="w-50 mt-3 mb-2 mx-auto" >
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    <button type="submit" class="btn btn-primary">Создать</button>
-</form>
-<a href="{% url 'courses_list' %}">Назад к списку</a>
+{% block title %}Создание курса{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Создать новый курс</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <div class="d-flex gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Создать курс
+                            </button>
+                            <a href="{% url 'courses_list' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Назад к списку
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
